@@ -1,5 +1,6 @@
-// Theme toggle (keeping the working theme code)
+// Theme toggle
 document.addEventListener('DOMContentLoaded', function() {
+    // Theme toggle functionality
     const themeToggleBtn = document.getElementById('theme-toggle');
     function toggleTheme() {
         const root = document.documentElement;
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initWeather();
 });
 
-// Weather functionality with better error handling
+// Weather functionality with detailed error handling
 async function initWeather() {
     const weatherDisplay = document.getElementById('weather-display');
     if (!weatherDisplay) {
@@ -58,8 +59,8 @@ async function initWeather() {
 }
 
 async function getWeatherData(lat, lon) {
-    // Using a sample API key for demonstration - replace with your own
-    const apiKey = '1234567890abcdef1234567890abcdef';
+    // Replace this with your actual OpenWeatherMap API key
+    const apiKey = 'YOUR_API_KEY_HERE';
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
     
     console.log('Fetching from URL:', url);
@@ -100,5 +101,45 @@ function displayWeather(data) {
     }
 }
 
-// Keeping the existing form and smooth scrolling code
-[... rest of the code remains the same ...]
+// Form handling
+const form = document.getElementById('contactForm');
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        // Validate form
+        if (!name || !email || !message) {
+            alert('Please fill in all fields');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address');
+            return;
+        }
+        
+        // In a real application, you would send this data to a server
+        console.log('Form submitted:', { name, email, message });
+        alert('Thank you for your message! I will get back to you soon.');
+        
+        // Clear form
+        this.reset();
+    });
+}
+
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
