@@ -20,30 +20,31 @@ A professional portfolio website built as the final project for CS 463/563 - Int
 ## Project Structure
 
 ```
-portfolio-website/
+dawsh2.github.io/
 │
 ├── index.html          # Main HTML file
 ├── styles.css          # CSS styles
-└── README.md          # Project documentation
+├── README.md           # Project documentation
+└── journal.md          # Journal document
 ```
 
 ## How to Run the Code
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/portfolio-website.git
+   git clone https://github.com/dawsh2/dawsh2.github.io
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd portfolio-website
+   cd dawsh2.github.io
    ```
 
 3. Open `index.html` in your preferred web browser to view the site locally.
 
 ## Deployment
 
-This site is deployed using GitHub Pages and can be accessed at: [https://your-username.github.io/portfolio-website](https://your-username.github.io/portfolio-website)
+This site is deployed using GitHub Pages and can be accessed at: [https://dawsh2.github.io/](https://dawsh2.github.io/)
 
 To deploy your own version:
 1. Fork this repository
