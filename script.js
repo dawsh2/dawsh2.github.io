@@ -1,34 +1,27 @@
-// Theme Switcher
-document.addEventListener('DOMContentLoaded', () => {
-    // Get theme toggle button
-    const themeToggle = document.getElementById('theme-toggle');
-    
-    // Set initial theme based on user's stored preference
-    if (localStorage.getItem('theme')) {
-        document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
-    } else {
-        // Default to light theme
-        document.documentElement.setAttribute('data-theme', 'light');
+// Wait for the DOM to load completely
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the theme toggle button
+    const themeToggleBtn = document.getElementById('theme-toggle');
+
+    // Function to handle theme toggle
+    function toggleTheme() {
+        // Get the root html element
+        const root = document.documentElement;
+        // Get current theme
+        const currentTheme = root.getAttribute('data-theme') || 'light';
+        // Switch theme
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        // Set new theme
+        root.setAttribute('data-theme', newTheme);
     }
 
-    // Toggle theme function
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-    });
-});
-
-// Smooth scrolling for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+    // Add click event listener to the button
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        console.log('Theme toggle button listener added'); // Debug log
+    } else {
+        console.log('Theme toggle button not found'); // Debug log
+    }
 });
 
 // Form handling
@@ -55,7 +48,6 @@ if (form) {
             return;
         }
         
-        // In a real application, you would send this data to a server
         console.log('Form submitted:', { name, email, message });
         alert('Thank you for your message! I will get back to you soon.');
         
@@ -63,3 +55,13 @@ if (form) {
         this.reset();
     });
 }
+
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
