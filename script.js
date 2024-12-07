@@ -50,7 +50,8 @@ async function initWeather() {
 
 async function getWeatherData(lat, lon) {
     // Replace this with your actual API key from OpenWeatherMap
-    const apiKey = 'c62b570716fa572f0dec2aa4405df17e;
+    const apiKey = 'c62b570716fa572f0dec2aa4405df17e';
+            
     
     const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`
