@@ -60,7 +60,7 @@ async function initWeather() {
 
 async function getWeatherData(lat, lon) {
     // Replace this with your actual OpenWeatherMap API key
-    const apiKey = 'YOUR_API_KEY_HERE';
+    const apiKey = 'c62b570716fa572f0dec2aa4405df17e';
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
     
     console.log('Fetching from URL:', url);
