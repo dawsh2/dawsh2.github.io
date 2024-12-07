@@ -2,13 +2,13 @@
 CS 463/563 - Intro to Web Development
 
 ## Project Links
-- GitHub Repository: https://github.com/your-username/portfolio-website
-- Deployed Site: https://your-username.github.io/portfolio-website
+- GitHub Repository: https://github.com/dawsh2/dawsh2.github.io
+- Deployed Site: https://dawsh2.github.io
 
 ## Development Sessions
 
 ### Session 1: Project Setup and Initial Structure (2 hours)
-**Date: [Current Date]**
+**Date: 11/29**
 
 #### Tasks Completed:
 1. Created GitHub repository
@@ -29,7 +29,7 @@ CS 463/563 - Intro to Web Development
 - CSS-Tricks guide on position: fixed: https://css-tricks.com/almanac/properties/p/position/
 
 ### Session 2: Styling and Responsive Design (3 hours)
-**Date: [Current Date + 1]**
+**Date: [11/30]**
 
 #### Tasks Completed:
 1. Created styles.css
@@ -50,7 +50,7 @@ CS 463/563 - Intro to Web Development
 - Responsive Design Patterns: https://developers.google.com/web/fundamentals/design-and-ux/responsive/patterns
 
 ### Session 3: Contact Form and JavaScript (2 hours)
-**Date: [Current Date + 2]**
+**Date: [11/31]**
 
 #### Tasks Completed:
 1. Built contact form HTML structure
@@ -71,7 +71,7 @@ CS 463/563 - Intro to Web Development
 - Regular Expressions for Email Validation
 
 ### Session 4: Projects Section and Content (2 hours)
-**Date: [Current Date + 3]**
+**Date: [12/01]**
 
 #### Tasks Completed:
 1. Added project cards
@@ -91,7 +91,7 @@ CS 463/563 - Intro to Web Development
 - CSS Box Shadow Examples: https://getcssscan.com/css-box-shadow-examples
 
 ### Session 5: Testing and Optimization (2 hours)
-**Date: [Current Date + 4]**
+**Date: [12/02]**
 
 #### Tasks Completed:
 1. Cross-browser testing
@@ -112,7 +112,7 @@ CS 463/563 - Intro to Web Development
 - Google Lighthouse Documentation
 
 ### Session 6: Documentation and Deployment (1 hour)
-**Date: [Current Date + 5]**
+**Date: [12/03]**
 
 #### Tasks Completed:
 1. Created README.md
@@ -184,6 +184,138 @@ CS 463/563 - Intro to Web Development
    - Add more project examples
    - Include blog section
    - Expand work experience section
+  
+
+### Session 7: Theme Switching Implementation (2 hours)
+**Date: [12/05]**
+
+#### Tasks Completed:
+1. Added theme toggle button to navigation
+2. Implemented CSS variables for theming
+3. Created theme switching JavaScript functionality
+
+#### Technical Details:
+- Added data-theme attribute to HTML root element
+- Created CSS variables for both light and dark themes
+- Implemented JavaScript toggle functionality
+
+#### Challenges:
+- Initially had issues with theme toggle not working
+- Solution: Simplified JavaScript code and added proper event listeners
+- Added console logging for debugging
+
+#### Resources Used:
+- MDN docs on CSS Custom Properties
+- CSS-Tricks guide on dark mode
+
+### Session 8: Weather Widget Integration (3 hours)
+**Date: [12/06]**
+
+#### Tasks Completed:
+1. Created weather widget HTML structure
+2. Added weather API integration
+3. Implemented geolocation functionality
+4. Added error handling and loading states
+
+#### Technical Details:
+- Used OpenWeatherMap API for weather data
+- Implemented browser geolocation API
+- Added error handling for API and geolocation failures
+- Created loading and error states for better UX
+
+#### Challenges:
+- Initial issues with weather data not loading
+- Solution: Added detailed error logging and improved error handling
+- Had to debug API integration with console logs
+
+#### Code Implementation:
+```javascript
+async function initWeather() {
+    const weatherDisplay = document.getElementById('weather-display');
+    if (!weatherDisplay) return;
+
+    try {
+        const position = await new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(resolve, reject);
+        });
+
+        const weatherData = await getWeatherData(
+            position.coords.latitude,
+            position.coords.longitude
+        );
+
+        displayWeather(weatherData);
+    } catch (error) {
+        console.error('Weather error:', error);
+        // Handle error state
+    }
+}
+```
+
+#### Resources Used:
+- OpenWeatherMap API Documentation: https://openweathermap.org/api
+- MDN Geolocation API docs: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
+- JavaScript Error Handling best practices
+
+### Session 9: Testing and Debugging (2 hours)
+**Date: [12/07]**
+
+#### Tasks Completed:
+1. Tested theme switching across browsers
+2. Debugged weather widget functionality
+3. Implemented error handling improvements
+4. Added loading states and user feedback
+
+#### Technical Details:
+- Added console logging for debugging
+- Improved error message display
+- Enhanced user feedback during loading states
+
+#### Challenges:
+- Weather widget needed better error handling
+- Solution: Added detailed error messages and improved user feedback
+- Made error states more informative for users
+
+#### Resources Used:
+- Chrome DevTools documentation
+- JavaScript debugging techniques
+- UX design patterns for loading states
+
+## New Techniques Learned
+
+Additional techniques from recent sessions:
+1. CSS Custom Properties for Theming
+   - Using CSS variables for dynamic theme switching
+   - Managing color schemes with CSS custom properties
+
+2. Weather API Integration
+   - Working with external APIs
+   - Handling API keys securely
+   - Managing asynchronous API calls
+
+3. Geolocation API
+   - Using browser geolocation
+   - Handling user permissions
+   - Error handling for location services
+
+4. Debugging Techniques
+   - Console logging for troubleshooting
+   - Browser DevTools usage
+   - Error handling best practices
+
+## Future Improvements
+
+Additional improvements identified:
+1. Weather Widget
+   - Add refresh functionality
+   - Include more weather details
+   - Add loading animations
+   - Implement weather caching
+
+2. Theme Switching
+   - Add transition animations
+   - Persist theme preference
+   - Add system theme detection
 
 ## Conclusion
 
