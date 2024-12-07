@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #2c3e50;
+            padding: 1rem;
+            z-index: 1000;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-list a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-list a:hover {
+            color: #3498db;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            scroll-margin-top: 4rem;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        /* About Section */
+        #about {
+            background-color: #f9f9f9;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .about-content {
+            max-width: 600px;
+        }
+
+        /* Work Section */
+        #work {
+            background-color: white;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .experience-card {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: #f9f9f9;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .project-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: white;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <img src="/api/placeholder/250/250" alt="Profile picture" class="profile-img">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>Hello! I'm a web developer passionate about creating meaningful and user-friendly applications. With experience in front-end and back-end development, I enjoy turning complex problems into simple, beautiful solutions.</p>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="work">
+        <h2>Work Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <h3>Software Developer</h3>
+                <p>Company Name | 2022 - Present</p>
+                <ul>
+                    <li>Developed responsive web applications using modern JavaScript frameworks</li>
+                    <li>Collaborated with cross-functional teams to deliver high-quality solutions</li>
+                    <li>Implemented best practices for web accessibility and performance</li>
+                </ul>
+            </div>
+            <div class="experience-card">
+                <h3>Web Development Intern</h3>
+                <p>Company Name | 2021</p>
+                <ul>
+                    <li>Assisted in the development of client websites</li>
+                    <li>Learned and applied modern web development practices</li>
+                    <li>Participated in code reviews and team meetings</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <p>A web application built with React that helps users track their daily tasks and manage their time effectively.</p>
+                <div class="project-links">
+                    <a href="https://github.com/username/project1" target="_blank">GitHub</a>
+                    <a href="https://project1-demo.com" target="_blank">Live Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>An e-commerce platform built using Node.js and Express, featuring user authentication and payment integration.</p>
+                <div class="project-links">
+                    <a href="https://github.com/username/project2" target="_blank">GitHub</a>
+                    <a href="https://project2-demo.com" target="_blank">Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Validate form
+            if (!name || !email || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // In a real application, you would send this data to a server
+            console.log('Form submitted:', { name, email, message });
+            alert('Thank you for your message! I will get back to you soon.');
+            
+            // Clear form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
