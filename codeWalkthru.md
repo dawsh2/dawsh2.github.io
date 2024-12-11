@@ -27,7 +27,7 @@ The foundation of our portfolio starts with clean, semantic HTML. Here's our bas
 </html>
 ```
 
-Notice the `data-theme="light"` attribute on the HTML element. This is our hook for theme switching - a small detail that makes a big difference in how we handle dark and light modes.
+Notice the `data-theme="light"` attribute on the HTML element. This is our hook for theme switching - a small detail that makes a big difference in how we handle dark and light modes. The main content sections are kept pretty straightforward.
 
 The navigation is kept simple but effective:
 
